@@ -14,9 +14,9 @@ const Login: NextPage = () => {
           <div className="mb-3">
             <input className='border p-3 w-full' type="text" name='password' placeholder='Password' />
           </div>
-          <button className='bg-blue-800 p-3 font-bold hover:bg-gray-500 text-white' type="submit">
+          <a href='/dashboard' className='bg-blue-800 p-3 font-bold hover:bg-gray-500 text-white text-center'>
             Login
-          </button>
+          </a>
         </div>
       </div>
     </div>
