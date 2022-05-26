@@ -5,7 +5,7 @@ const Login: NextPage = () => {
     <div className='bg-gray-200 h-screen'>
 
       {/* form login */}
-      <div className='container p-8'>
+      <div className='p-8'>
         <div className='bg-white flex flex-col w-96 mx-auto p-7 mt-10'>
           <p className='text-center mb-4 font-bold text-2xl'>Login</p>
           <div className="mb-3">
