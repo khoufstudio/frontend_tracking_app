@@ -22,7 +22,7 @@ const Login: NextPage = () => {
             <div>
               <input type="checkbox" name="ingat_saya" id="ingat_saya" /> Ingat saya
             </div>
-            <a href='#' className='text-center font-bold text-blue-900'>Lupa Password?</a>
+            <a href='/forgot_password' className='text-center font-bold text-blue-900'>Lupa Password?</a>
           </div>
           <hr className='my-4' />
           <p>Belum punya akun? Daftar <a className='font-bold text-blue-800' href="/daftar">disini</a></p>
