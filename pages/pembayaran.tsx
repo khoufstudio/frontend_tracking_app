@@ -1,17 +1,18 @@
 import { ReactElement } from 'react'
 import AdminLayout from '../components/layouts/admin'
 
-const Kalibrasi = () => {
+const Pembayaran = () => {
   return (
     <>
       {/* main page */}
-      <div>test</div>
+      <div>pembayaran</div>
       {/* end of main page */}
       </>
   )
 }
 
-Kalibrasi.getLayout = function getLayout(page: ReactElement) {
+Pembayaran.getLayout = function getLayout(page: ReactElement) {
   return <AdminLayout>{page}</AdminLayout>
 }
-export default Kalibrasi
+
+export default Pembayaran

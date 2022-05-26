@@ -14,7 +14,7 @@ const Login: NextPage = () => {
           <div className="mb-3">
             <input className='border p-3 w-full' type="text" name='password' placeholder='Password' />
           </div>
-          <a href='/pilih_dashboard' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
+          <a href='/pilih-dashboard' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
             Login
           </a>
 

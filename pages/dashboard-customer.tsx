@@ -1,7 +1,9 @@
-import { NextPage } from 'next'
 import { CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
+import { ReactElement } from 'react';
+import AdminLayout from "../components/layouts/admin";
 
-const DashboardCustomer: NextPage = () => {
+
+const DashboardCustomer = () => {
   return (
     <>
       {/* main page */}
@@ -42,6 +44,10 @@ const DashboardCustomer: NextPage = () => {
       {/* end of main page */}
       </>
   )
+}
+
+DashboardCustomer.getLayout = function getLayout(page: ReactElement) {
+  return <AdminLayout>{page}</AdminLayout>
 }
 
 export default DashboardCustomer
