@@ -1,80 +1,11 @@
 import { NextPage } from 'next'
-import { ChevronDownIcon, CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
-import { Menu, Transition } from '@headlessui/react';
+import { CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
 
 const DashboardCustomer: NextPage = () => {
   return (
-    <div className='bg-blue-50'>
-      {/* sidebar */}
-      <div className='bg-slate-900 w-56 text-white h-screen fixed z-10 pl-5'>
-        <div className="pr10 py-3">
-          <img src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
-        </div> 
-        <h3 className='text-slate-500'>
-          Halaman
-        </h3>
-        <nav>
-          <ul>
-            <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Beranda</li>
-            <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Kalibrasi</li>
-            <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Pembayaran</li>
-          </ul>
-        </nav>
-      </div>
-      {/* end of sidebar */}
-
-      {/* header */}
-      <nav className='bg-white border-b-slate-300 p-3 fixed w-screen shadow-md shadow-slate-100'>
-        <ul className='flex justify-end'>
-          <li>
-            <Menu>
-              <div className="relative">
-                <Menu.Button className='items-center flex font-semibold justify-end text-slate-500 w-56 hover:cursor-pointer'>
-                  <span>Pelanggan</span>
-                  <ChevronDownIcon className='h-5 w-5 text-slate-500 pt-1'/> 
-                </Menu.Button>
-                
-                {/* Use the Transition component. */}
-                <Transition
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-95 opacity-0"
-                  enterTo="transform scale-100 opacity-100"
-                  leave="transition duration-75 ease-out"
-                  leaveFrom="transform scale-100 opacity-100"
-                  leaveTo="transform scale-95 opacity-0"
-                >
-                  <Menu.Items className='absolute left-0 w-full text-slate-500 shadow'>
-                    <Menu.Item>
-                      {({active}) => (
-                        <a 
-                          className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3 border-b-2 border-b-slate-100'}
-                          href='/pengaturan'
-                        >
-                          Pengaturan
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({active}) => (
-                        <a 
-                          className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3'}
-                          href='/login'
-                        >
-                          Keluar
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </Transition>
-              </div>
-            </Menu>
-          </li>
-        </ul>
-      </nav>
-      {/* end of header */}
-
+    <>
       {/* main page */}
-      <main className='px-5 pt-20 ml-[230px] min-h-screen'>
+      <main>
         <h2 className='mb-2 text-2xl text-slate-700'>Beranda</h2>
         <div className="flex space-x-4">
           {/* card permintaan kalibrasi */}
@@ -97,7 +28,6 @@ const DashboardCustomer: NextPage = () => {
           </div>
           {/* end card permintaan pembayaran */}
 
-
           {/* card kalibrasi selesai */}
           <div className='w-80 h-36 bg-white shadow-sm rounded-lg p-7 flex justify-between'>
             <CheckCircleIcon className='h-20 text-red-500 pt-1'/> 
@@ -110,7 +40,7 @@ const DashboardCustomer: NextPage = () => {
           </div>
       </main>
       {/* end of main page */}
-    </div>
+      </>
   )
 }
 
