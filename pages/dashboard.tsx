@@ -7,7 +7,7 @@ const Dashboard: NextPage = () => {
       {/* sidebar */}
       <div className='bg-slate-800 w-56 text-white h-screen fixed z-10'>
         <div className="pl-5 pr10 py-3">
-          <a className='font-bold text-lg' href="#">Logo</a>
+          <img src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
         </div> 
         <nav>
           <ul>
@@ -32,58 +32,14 @@ const Dashboard: NextPage = () => {
       {/* end of header */}
 
       {/* main page */}
-      <main className='p-5 ml-[230px]'>
+      <main className='p-5 ml-[230px] min-h-screen'>
         <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
+        {/* card */}
+        <div className='w-56 h-36 bg-white shadow-sm rounded p-3'>
+          <p className='text-5xl'>1</p>
+        </div>
+        {/* end card */}
+        
       </main>
       {/* end of main page */}
     </div>
