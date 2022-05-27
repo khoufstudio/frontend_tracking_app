@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
 const Login: NextPage = () => {
   return (
@@ -14,18 +15,18 @@ const Login: NextPage = () => {
           <div className="mb-3">
             <input className='border p-3 w-full' type="text" name='password' placeholder='Password' />
           </div>
-          <a href='/pilih-dashboard' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
+          <Link href='/pilih-dashboard' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
             Login
-          </a>
+          </Link>
 
           <div className='flex justify-between  my-2'>
             <div>
               <input type="checkbox" name="ingat_saya" id="ingat_saya" /> Ingat saya
             </div>
-            <a href='/forgot_password' className='text-center font-bold text-blue-900'>Lupa Password?</a>
+            <Link href='/forgot_password' className='text-center font-bold text-blue-900'>Lupa Password?</Link>
           </div>
           <hr className='my-4' />
-          <p>Belum punya akun? Daftar <a className='font-bold text-blue-800' href="/daftar">disini</a></p>
+          <p>Belum punya akun? Daftar <Link className='font-bold text-blue-800' href="/daftar">disini</Link></p>
         </div>
       </div>
     </div>

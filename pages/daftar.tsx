@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from "next/link";
 
 const Daftar: NextPage = () => {
   return (
@@ -23,9 +24,9 @@ const Daftar: NextPage = () => {
           <div className="mb-3">
             <input className='border p-3 w-full' type="password_confirmation" name='password' placeholder='Ulangi Password' />
           </div>
-          <a href='/login' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
+          <Link href='/login' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
             Daftar
-          </a>
+          </Link>
         </div>
       </div>
     </div>

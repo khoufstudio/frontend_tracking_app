@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import { ChevronDownIcon, CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
+import Image from 'next/image';
 
 const Learning: NextPage = () => {
   return (
@@ -7,7 +8,7 @@ const Learning: NextPage = () => {
       {/* sidebar */}
       <div className='bg-slate-800 w-56 text-white h-screen fixed z-10'>
         <div className="pl-5 pr10 py-3">
-          <img src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
+          <Image src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
         </div> 
         <nav>
           <ul>
