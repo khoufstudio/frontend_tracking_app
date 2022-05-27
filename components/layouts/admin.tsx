@@ -14,7 +14,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
         {/* sidebar */}
         <div className='bg-slate-900 w-56 text-white h-screen fixed z-10'>
           <div className='pl-5 pr-10 py-3'>
-            <Image src='/images/global_quality_logo.jpg' className='h-10' alt='Logo' />
+            <Image src='/images/global_quality_logo.jpg' height={40} width={40} alt='Logo' />
           </div> 
           <h3 className='pl-5 text-slate-500 text-sm'>
             Halaman
@@ -52,21 +52,19 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
                     <Menu.Items className='absolute left-0 w-full text-slate-500 shadow'>
                       <Menu.Item>
                         {({active}) => (
-                          <Link 
-                            className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3 border-b-2 border-b-slate-100'}
-                            href='/pengaturan'
-                          >
+                          <Link href='/pengaturan'>
+                            <p className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3 border-b-2 border-b-slate-100 hover:cursor-pointer'}>
                             Pengaturan
+                            </p>
                           </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({active}) => (
-                          <Link 
-                            className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3'}
-                            href='/login'
-                          >
+                          <Link href='/login'>
+                            <p className={`${active ? 'bg-slate-100' : 'bg-white'}` + ' block p-3 border-b-2 border-b-slate-100 hover:cursor-pointer'}>
                             Keluar
+                            </p>
                           </Link>
                         )}
                       </Menu.Item>

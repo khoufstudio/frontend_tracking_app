@@ -15,15 +15,15 @@ const Login: NextPage = () => {
           <div className="mb-3">
             <input className='border p-3 w-full' type="text" name='password' placeholder='Password' />
           </div>
-          <Link href='/pilih-dashboard' className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>
-            Login
+          <Link href='/pilih-dashboard'>
+            <button className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded'>Login</button>
           </Link>
 
           <div className='flex justify-between  my-2'>
             <div>
               <input type="checkbox" name="ingat_saya" id="ingat_saya" /> Ingat saya
             </div>
-            <Link href='/forgot_password' className='text-center font-bold text-blue-900'>Lupa Password?</Link>
+            <Link href='/forgot_password'><p className='text-center font-bold text-blue-900'>Lupa Password?</p></Link>
           </div>
           <hr className='my-4' />
           <p>Belum punya akun? Daftar <Link className='font-bold text-blue-800' href="/daftar">disini</Link></p>
