@@ -5,7 +5,7 @@ const Home: NextPage = () => {
     <div className='bg-cyan-600 h-screen'>
 
       {/* Navbar */}
-      <nav className='bg-white border-solid shadow-sm'>
+      <nav className='bg-white border-solid shadow-sm absolute w-full z-10'>
         <div className="p-5 flex justify-between">
           <img src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
           <div>
@@ -21,8 +21,9 @@ const Home: NextPage = () => {
       </nav>
       {/* End of Navbar */}
 
-      <h1 className='text-center text-5xl font-bold mt-36 text-white drop-shadow-xl'>Sistem Kalibrasi Online</h1>
+      <h1 className='text-center text-5xl font-bold pt-60 text-white drop-shadow-xl'>Sistem Kalibrasi Online</h1>
       <p className='text-slate-300 text-center text-xl font-medium mt-2'>By Global Quality</p>
+      <img className='w-screen opacity-5 absolute top-0 h-screen' src="/images/background.jpg" alt="" />
     </div>
   )
 }
