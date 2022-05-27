@@ -10,18 +10,18 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
     <>
       <div className='bg-blue-50'>
         {/* sidebar */}
-        <div className='bg-slate-900 w-56 text-white h-screen fixed z-10 pl-5'>
-          <div className='pr10 py-3'>
+        <div className='bg-slate-900 w-56 text-white h-screen fixed z-10'>
+          <div className='pl-5 pr-10 py-3'>
             <img src='/images/global_quality_logo.jpg' className='h-10' alt='Logo' />
           </div> 
-          <h3 className='text-slate-500'>
+          <h3 className='pl-5 text-slate-500 text-sm'>
             Halaman
           </h3>
           <nav>
             <ul>
-              <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Beranda</li>
-              <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><a href='/kalibrasi'>Kalibrasi</a></li>
-              <li className='pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><a href='/pembayaran'>Pembayaran</a></li>
+              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><a href='/dashboard-customer'>Beranda</a></li>
+              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><a href='/kalibrasi'>Kalibrasi</a></li>
+              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><a href='/pembayaran'>Pembayaran</a></li>
             </ul>
           </nav>
         </div>
