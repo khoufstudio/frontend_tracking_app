@@ -21,9 +21,13 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
           </h3>
           <nav>
             <ul>
-              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href='/dashboard-customer'>Beranda</Link></li>
-              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href='/kalibrasi'>Kalibrasi</Link></li>
-              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href='/pembayaran'>Pembayaran</Link></li>
+              {[
+                ['Beranda', '/dashboard-customer'],
+                ['Kalibrasi', '/kalibrasi'],
+                ['Pembayaran', '/pembayaran']
+              ].map(([title, url]) => (
+                <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href={url}>{title}</Link></li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -34,8 +38,8 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
           <ul className='flex justify-end'>
             <li>
               <Menu>
-                <div className='relative'>
-                  <Menu.Button className='items-center flex font-semibold justify-end text-slate-500 w-56 hover:cursor-pointer'>
+                <div className='relative text-sm'>
+                  <Menu.Button className='items-center flex text-sm justify-end text-slate-500 w-56 hover:cursor-pointer'>
                     <span>Pelanggan</span>
                     <ChevronDownIcon className='h-5 w-5 text-slate-500 pt-1'/> 
                   </Menu.Button>

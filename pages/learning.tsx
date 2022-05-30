@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import { ChevronDownIcon, CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import Image from 'next/image';
+import Link from 'next/link'
 
 const Learning: NextPage = () => {
   return (
@@ -8,14 +9,17 @@ const Learning: NextPage = () => {
       {/* sidebar */}
       <div className='bg-slate-800 w-56 text-white h-screen fixed z-10'>
         <div className="pl-5 pr10 py-3">
-          <Image src='/images/global_quality_logo.jpg' className='h-10' alt="Logo" />
+          <Image src='/images/global_quality_logo.jpg' height={10} width={10} className='h-10' alt="Logo" />
         </div> 
         <nav>
           <ul>
-            <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Learning</li>
-            <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Profile</li>
-            <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Settings</li>
-            <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>Logout</li>
+            {[
+              ['Learning', '/learning'],
+              ['Profile', '/profile'],
+              ['Setting', '/setting']
+            ].map(([title, url]) => (
+              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href={url}>{title}</Link></li>
+            ))}
           </ul>
         </nav>
       </div>
