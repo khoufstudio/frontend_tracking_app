@@ -1,32 +1,19 @@
-import { NextPage } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className='bg-cyan-600 h-screen'>
-      {/* Navbar */}
-      <nav className='bg-white border-solid shadow-sm absolute w-full z-10'>
-        <div className="p-5 flex justify-between">
-          <Image src='/images/global_quality_logo.jpg' height={40} width={40} alt="Logo" />
-          <div>
-            <ul>
-              <li>
-                <Link href="/login">
-                  <button className='bg-sky-600 hover:bg-sky-700 text-white px-7 py-2 rounded font-bold'>Login / Daftar</button>
-                </Link>
-              </li>
-            </ul>
+    <div className="bg-cyan-600 h-screen">
+      <div className="pt-44 flex justify-center">
+        <div>
+          <h2 className="text-white font-semibold text-2xl mb-8">Lacak Kalibrasi!</h2>
+          <div className="flex">
+            <input type="text" className="p-5 rounded w-[600px] mr-4" placeholder="Masukan No RESI Kalibrasi" />
+            <button className="bg-slate-800 text-white rounded px-14">Lacak</button>
           </div>
         </div>
-      </nav>
-      {/* End of Navbar */}
-
-      <h1 className='text-center text-5xl font-bold pt-60 text-white drop-shadow-xl'>Sistem Kalibrasi Online</h1>
-      <p className='text-slate-300 text-center text-xl font-medium mt-2'>By Global Quality</p>
-      <Image className='w-screen opacity-5 absolute top-0 h-screen' src="/images/background.jpg" alt="" layout='fill' />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
