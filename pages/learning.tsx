@@ -18,7 +18,7 @@ const Learning: NextPage = () => {
               ['Profile', '/profile'],
               ['Setting', '/setting']
             ].map(([title, url]) => (
-              <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href={url}>{title}</Link></li>
+              <li key={url} className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'><Link href={url}>{title}</Link></li>
             ))}
           </ul>
         </nav>
