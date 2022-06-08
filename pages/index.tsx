@@ -40,7 +40,7 @@ const Home: NextPage = () => {
                   {/* progress bar */}
                   <div className="flex justify-between mb-8">
                     {['Konfirmasi Payment', 'Proses Dokumen', 'Konfirmasi Bayar', 'Selesai'].map((value, index) => (
-                      <div className={index < 3 ? "flex-grow" : ""}>
+                      <div key={index} className={index < 3 ? "flex-grow" : ""}>
                         <p className="text-left mb-5">{value}</p>
                         <div className="flex items-center">
                           <div className="rounded-full w-10 h-10 bg-blue-600">
