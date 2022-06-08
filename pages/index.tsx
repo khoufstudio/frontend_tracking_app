@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react"
+import { CheckIcon } from "@heroicons/react/solid"
 import { NextPage } from "next"
 import { Fragment, useState } from "react"
 
@@ -33,14 +34,28 @@ const Home: NextPage = () => {
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <div className="fixed inset-0 overflow-y-auto bg-black/30">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden bg-white p-6 rounded">
-                <Dialog.Title>Lacak Kalibrasi</Dialog.Title>
-                <Dialog.Description>Lacak Kalibarsi</Dialog.Description>
-                <div>
-                  {/* chart */}
-                  {/* end of chart */}
-                  <button>Download Sertifikat</button>
-                </div>
+              <Dialog.Panel className="w-screen md:w-[800px] transform overflow-hidden bg-white p-6 rounded">
+                <Dialog.Title className="mb-10 text-2xl">Lacak Kalibrasi</Dialog.Title>
+                <Dialog.Description>
+                  {/* progress bar */}
+                  <div className="flex justify-between mb-8">
+                    {['Konfirmasi Payment', 'Proses Dokumen', 'Konfirmasi Bayar', 'Selesai'].map((value, index) => (
+                      <div className={index < 3 ? "flex-grow" : ""}>
+                        <p className="text-left mb-5">{value}</p>
+                        <div className="flex items-center">
+                          <div className="rounded-full w-10 h-10 bg-blue-600">
+                            <CheckIcon className='h-8 m-1 text-white'/> 
+                          </div>
+                          {index < 3 &&
+                            <div className="h-2 w-full bg-blue-600"></div>
+                          }
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* end of progress bar */}
+                  <button className="bg-red-600 text-white rounded p-3">Download Sertifikat</button>
+                </Dialog.Description>
               </Dialog.Panel>
             </div>
           </div>
