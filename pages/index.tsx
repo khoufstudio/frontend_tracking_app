@@ -35,7 +35,9 @@ const Home: NextPage = () => {
           <div className="fixed inset-0 overflow-y-auto bg-black/30">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Dialog.Panel className="w-screen md:w-[800px] transform overflow-hidden bg-white p-6 rounded">
-                <Dialog.Title className="mb-10 text-2xl">Lacak Kalibrasi</Dialog.Title>
+                <Dialog.Title className="mb-10 text-xl text-left pl-6">
+                  No RESI: <span className="font-bold text-blue-600">202206010017XAFD</span>
+                </Dialog.Title>
                 <Dialog.Description>
                   {/* progress bar */}
                   <div className="flex justify-between mb-8">
