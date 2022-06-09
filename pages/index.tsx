@@ -39,15 +39,20 @@ const Home: NextPage = () => {
                 <Dialog.Description>
                   {/* progress bar */}
                   <div className="flex justify-between mb-8">
-                    {['Konfirmasi Payment', 'Proses Dokumen', 'Konfirmasi Bayar', 'Selesai'].map((value, index) => (
-                      <div key={index} className={index < 3 ? "flex-grow" : ""}>
-                        <p className="text-left mb-5">{value}</p>
+                    {['Konfirmasi Payment', 'Proses Dokumen', 'Konfirmasi Bayar', 'Sertifikat Selesai'].map((value, index) => (
+                      <div key={index} className="flex-grow">
+                        <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
+                          {index == 0 
+                            ? <div className="h-2 w-full"></div>
+                            : <div className="h-2 w-full bg-blue-600"></div>
+                          }
                           <div className="rounded-full w-10 h-10 bg-blue-600">
                             <CheckIcon className='h-8 m-1 text-white'/> 
                           </div>
-                          {index < 3 &&
-                            <div className="h-2 w-full bg-blue-600"></div>
+                          {index == 3 
+                            ? <div className="h-2 w-full "></div>
+                            : <div className="h-2 w-full bg-blue-600"></div>
                           }
                         </div>
                       </div>
