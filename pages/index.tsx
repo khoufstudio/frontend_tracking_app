@@ -1,17 +1,26 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { CheckIcon } from "@heroicons/react/solid"
+import { CheckIcon, ExclamationIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
 import { NextPage } from "next"
 import { Fragment, useState } from "react"
 
+const listOrderNumber: Array<string> = ['202206010017XA8D', '202206010017XA99', '202206010017X8FD']
 
 const Home: NextPage = () => {
-  let [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [orderNumber, setOrderNumber] = useState('')
+  const [formError, setFormError] = useState(false)
   
   const openModal = () => {
-    setIsOpen(true)
+    if (listOrderNumber.indexOf(orderNumber) != -1) {
+      setIsOpen(true)
+      setFormError(false)
+    } else {
+      setFormError(true)
+    }
   }
 
   const closeModal = () => {
+    setFormError(false)
     setIsOpen(false)
   }
 
@@ -21,8 +30,14 @@ const Home: NextPage = () => {
       <div className="fixed inset-0 flex items-center justify-center bg-cyan-600 h-screen">
         <div className="md:w-[600px] w-100">
           <h2 className="text-white font-semibold text-2xl mb-8">Lacak Kalibrasi!</h2>
+          <div className={`flex mb-4 bg-red-100 rounded p-4 ${formError ? "block" : "hidden"}`}>
+            <ExclamationIcon className="h-6 text-red-600 mr-2" />
+            <p className="text-red-600 font-bold">Resi Tidak ditemukan</p>
+          </div>
           <div className="flex md:flex-row flex-col mb-56">
-            <input type="text" className="p-5 rounded mr-4 w-full" placeholder="Masukan No RESI Kalibrasi" />
+            <div className="mr-4 w-full">
+              <input value={orderNumber} type="text" className="p-5 rounded w-full" placeholder="Masukan No RESI Kalibrasi" onChange={ e => setOrderNumber(e.target.value)} />
+            </div>
             <button className="bg-slate-700 text-white rounded px-14 p-5 md:mt-0 mt-4 h-full" onClick={openModal}>Lacak</button>
           </div>
         </div>
@@ -36,7 +51,7 @@ const Home: NextPage = () => {
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Dialog.Panel className="w-screen md:w-[800px] transform overflow-hidden bg-white p-6 rounded">
                 <Dialog.Title className="mb-10 text-xl text-left pl-6">
-                  No RESI: <span className="font-bold text-blue-600">202206010017XAFD</span>
+                  No RESI: <span className="font-bold text-blue-600">{orderNumber}</span>
                 </Dialog.Title>
                 <Dialog.Description>
                   {/* progress bar */}
