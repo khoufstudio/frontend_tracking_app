@@ -56,7 +56,7 @@ const Home: NextPage = () => {
                 <Dialog.Description>
                   {/* progress bar */}
                   <div className="flex justify-between mb-8">
-                    {['Konfirmasi Payment', 'Proses Dokumen', 'Konfirmasi Bayar', 'Sertifikat Selesai'].map((value, index) => (
+                    {['Persetujuan Pemesanan', 'Proses Dokumen', 'Konfirmasi Bayar', 'Sertifikat Selesai'].map((value, index) => (
                       <div key={index} className="flex-grow">
                         <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
