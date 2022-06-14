@@ -2,16 +2,30 @@ import { Dialog, Transition } from "@headlessui/react"
 import { CheckIcon, ExclamationIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
 import { NextPage } from "next"
 import { Fragment, useState } from "react"
+import { resourceLimits } from "worker_threads"
 
-const listOrderNumber: Array<string> = ['202206010017XA8D', '202206010017XA99', '202206010017X8FD']
+interface Resi {
+  no: string,
+  step: number
+}
+
+const listOrderNumber: Array<Resi> = [
+  {no: '202206010017XA8D', step: 2}, 
+  {no: '202206010017XA99', step: 1}, 
+  {no: '202206010017X8FD', step: 3}, 
+]
 
 const Home: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [orderNumber, setOrderNumber] = useState('')
   const [formError, setFormError] = useState(false)
+  const [orderDetail, setOrderDetail] = useState<Resi>({no: "", step: 0})
   
   const openModal = () => {
-    if (listOrderNumber.indexOf(orderNumber) != -1) {
+    let result: Resi | undefined = listOrderNumber.find(detailOrderNumber => detailOrderNumber.no == orderNumber)
+
+    if (result != undefined) {
+      setOrderDetail(result)
       setIsOpen(true)
       setFormError(false)
     } else {
@@ -60,7 +74,7 @@ const Home: NextPage = () => {
                       <div key={index} className="flex-grow">
                         <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
-                          <div className={`h-2 w-full ${index != 0 && 'bg-blue-600'} `}></div>
+                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) && 'bg-blue-600'} `}></div>
                           <div className="rounded-full w-10 h-10 bg-blue-600">
                             <CheckIcon className='h-8 m-1 text-white'/> 
                           </div>
