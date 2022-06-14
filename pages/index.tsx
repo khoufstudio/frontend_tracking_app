@@ -74,11 +74,11 @@ const Home: NextPage = () => {
                       <div key={index} className="flex-grow">
                         <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
-                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) && 'bg-blue-600'} `}></div>
+                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) ? 'bg-blue-600' : index > 0 && 'bg-gray-400'}`}></div>
                           <div className="rounded-full w-10 h-10 bg-blue-600">
                             <CheckIcon className='h-8 m-1 text-white'/> 
                           </div>
-                          <div className={`h-2 w-full ${index != 3 && 'bg-blue-600'} `}></div>
+                          <div className={`h-2 w-full ${(index != 0 && index < orderDetail.step) ? 'bg-blue-600' : index < 3 && 'bg-gray-400'}`}></div>
                         </div>
                       </div>
                     ))}
