@@ -12,6 +12,7 @@ const listOrderNumber: Array<Resi> = [
   {no: '202206010017XA8D', step: 2}, 
   {no: '202206010017XA99', step: 1}, 
   {no: '202206010017X8FD', step: 3}, 
+  {no: '202206010017X8XX', step: 4}, 
 ]
 
 const Home: NextPage = () => {
@@ -73,17 +74,17 @@ const Home: NextPage = () => {
                       <div key={index} className="flex-grow">
                         <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
-                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) ? 'bg-gray-400' : index > 0 && 'bg-blue-600'}`}></div>
+                          <div className={`h-2 w-full ${(index != 0 && index >= orderDetail.step) ? 'bg-gray-400' : index > 0 && 'bg-blue-600'}`}></div>
                           <div className={`rounded-full w-10 h-10 ${(index < orderDetail.step) ? 'bg-blue-600' : 'bg-gray-400'}`}>
                             <CheckIcon className='h-8 m-1 text-white'/> 
                           </div>
-                          <div className={`h-2 w-full ${(index != 0 && index < orderDetail.step) ? 'bg-blue-600' : index < 3 && 'bg-gray-400'}`}></div>
+                          <div className={`h-2 w-full ${((index + 1) != 0 && (index + 1) < orderDetail.step) ? 'bg-blue-600' : (index + 1) <= 3 && 'bg-gray-400'}`}></div>
                         </div>
                       </div>
                     ))}
                   </div>
                   {/* end of progress bar */}
-                  {orderDetail.step == 3 &&
+                  {orderDetail.step == 4 &&
                     <button className="bg-red-600 text-white rounded p-3">Download Sertifikat</button>
                   }
                 </Dialog.Description>
