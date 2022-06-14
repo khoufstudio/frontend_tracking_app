@@ -2,7 +2,6 @@ import { Dialog, Transition } from "@headlessui/react"
 import { CheckIcon, ExclamationIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
 import { NextPage } from "next"
 import { Fragment, useState } from "react"
-import { resourceLimits } from "worker_threads"
 
 interface Resi {
   no: string,
@@ -74,8 +73,8 @@ const Home: NextPage = () => {
                       <div key={index} className="flex-grow">
                         <p className="text-center mb-5">{value}</p>
                         <div className="flex items-center">
-                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) ? 'bg-blue-600' : index > 0 && 'bg-gray-400'}`}></div>
-                          <div className="rounded-full w-10 h-10 bg-blue-600">
+                          <div className={`h-2 w-full ${(index != 0 && index > orderDetail.step) ? 'bg-gray-400' : index > 0 && 'bg-blue-600'}`}></div>
+                          <div className={`rounded-full w-10 h-10 ${(index < orderDetail.step) ? 'bg-blue-600' : 'bg-gray-400'}`}>
                             <CheckIcon className='h-8 m-1 text-white'/> 
                           </div>
                           <div className={`h-2 w-full ${(index != 0 && index < orderDetail.step) ? 'bg-blue-600' : index < 3 && 'bg-gray-400'}`}></div>
