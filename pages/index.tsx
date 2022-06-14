@@ -84,7 +84,9 @@ const Home: NextPage = () => {
                     ))}
                   </div>
                   {/* end of progress bar */}
-                  <button className="bg-red-600 text-white rounded p-3">Download Sertifikat</button>
+                  {orderDetail.step == 3 &&
+                    <button className="bg-red-600 text-white rounded p-3">Download Sertifikat</button>
+                  }
                 </Dialog.Description>
               </Dialog.Panel>
             </div>
