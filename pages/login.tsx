@@ -34,7 +34,7 @@ const Login: NextPage = () => {
             <input className='border p-3 w-full' type="text" name='username' placeholder='Username' onChange={e => setUsername(e.target.value)} />
           </div>
           <div className="mb-3">
-            <input className='border p-3 w-full' type="text" name='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+            <input className='border p-3 w-full' type="password" name='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
           </div>
           <button className='bg-sky-600 hover:bg-sky-700 p-3 font-bold text-white text-center rounded' onClick={submitForm}>Login</button>
           <div className='flex justify-between  my-2'>
