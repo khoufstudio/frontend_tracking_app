@@ -21,7 +21,8 @@ const Home: NextPage = () => {
   const [formError, setFormError] = useState(false)
   const [orderDetail, setOrderDetail] = useState<Resi>({no: "", step: 0})
   
-  const openModal = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
     let result: Resi | undefined = listOrderNumber.find(detailOrderNumber => detailOrderNumber.no == orderNumber)
 
     if (result != undefined) {
@@ -48,12 +49,12 @@ const Home: NextPage = () => {
             <ExclamationIcon className="h-6 text-red-600 mr-2" />
             <p className="text-red-600 font-bold">Resi Tidak ditemukan</p>
           </div>
-          <div className="flex md:flex-row flex-col mb-56">
+          <form onSubmit={handleSubmit} className="flex md:flex-row flex-col mb-56">
             <div className="mr-4 w-full">
               <input value={orderNumber} type="text" className="p-5 rounded w-full" placeholder="Masukan No RESI Kalibrasi" onChange={ e => setOrderNumber(e.target.value)} />
             </div>
-            <button className="bg-slate-700 text-white rounded px-14 p-5 md:mt-0 mt-4 h-full" onClick={openModal}>Lacak</button>
-          </div>
+            <button type="submit" className="bg-slate-700 text-white rounded px-14 p-5 md:mt-0 mt-4 h-full">Lacak</button>
+          </form>
         </div>
       </div>
       {/* end of form check kalibrasi */}
