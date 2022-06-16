@@ -53,7 +53,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
                     leaveFrom='transform scale-100 opacity-100'
                     leaveTo='transform scale-95 opacity-0'
                   >
-                    <Menu.Items className='absolute left-0 w-full text-slate-500 shadow'>
+                    <Menu.Items className='absolute left-0 w-full text-slate-500 shadow mt-3'>
                       <Menu.Item>
                         {({active}) => (
                           <Link href='/pengaturan'>
