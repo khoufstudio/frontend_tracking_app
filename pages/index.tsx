@@ -20,10 +20,19 @@ const Home: NextPage = () => {
   const [orderNumber, setOrderNumber] = useState('')
   const [formError, setFormError] = useState(false)
   const [orderDetail, setOrderDetail] = useState<Resi>({no: "", step: 0})
+  const [wordingError, setWordingError] = useState('Resi Tidak Ditemukan')
   
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    let result: Resi | undefined = listOrderNumber.find(detailOrderNumber => detailOrderNumber.no == orderNumber)
+    let result: Resi | undefined
+
+    if (orderNumber == "") {
+      result = undefined
+      setWordingError("No Resi tidak boleh kosong!")
+    } else {
+      result = listOrderNumber.find(detailOrderNumber => detailOrderNumber.no == orderNumber)
+      setWordingError("Resi Tidak Ditemukan")
+    }
 
     if (result != undefined) {
       setOrderDetail(result)
@@ -47,7 +56,7 @@ const Home: NextPage = () => {
           <h2 className="text-white font-semibold text-2xl mb-8">Lacak Kalibrasi!</h2>
           <div className={`flex mb-4 bg-red-100 rounded p-4 ${formError ? "block" : "hidden"}`}>
             <ExclamationIcon className="h-6 text-red-600 mr-2" />
-            <p className="text-red-600 font-bold">Resi Tidak ditemukan</p>
+            <p className="text-red-600 font-bold">{wordingError}</p>
           </div>
           <form onSubmit={handleSubmit} className="flex md:flex-row flex-col mb-56">
             <div className="mr-4 w-full">
