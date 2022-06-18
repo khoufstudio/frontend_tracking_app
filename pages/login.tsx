@@ -1,6 +1,6 @@
 import { ExclamationIcon } from '@heroicons/react/solid'
 import type { NextPage } from 'next'
-import Link from 'next/link'
+import { NextResponse } from 'next/server'
 import { useState } from 'react'
 
 const Login: NextPage = () => {
@@ -12,13 +12,20 @@ const Login: NextPage = () => {
   const submitForm = (e: any) => {
     e.preventDefault()
 
-    setFormError(true)
+    setFormError(false)
 
     // check if username / password are empty
     if (username == '' || password == '') {
       setMessageFormError("Username dan Password wajib diisi")
+      setFormError(true)
+    } 
+
+    if (username == 'operator' && password == 'operator') {
+      // redirect to dashboard
+      window.location.replace('/dashboard')
     } else {
       setMessageFormError("Username / Password salah")
+      setFormError(true)
     }
   }
 
