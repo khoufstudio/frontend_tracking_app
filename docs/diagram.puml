@@ -1,0 +1,13 @@
+@startuml
+(*) --> "Buat Pesanan"
+--> "Kirim PDF melalui email"
+if "OK" then
+  --> [Ya] "Proses Dokumen"
+  --> "Proses Kalibrasi di Teknisi"
+  --> "Admin Ketik Hasil Kalibrasi"
+  --> "Approval Finance"
+  -->(*)
+else 
+  --> [Revisi] "Buat Pesanan"
+endif
+@enduml
