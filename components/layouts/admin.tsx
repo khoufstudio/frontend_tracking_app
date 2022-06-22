@@ -22,7 +22,8 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
           <nav>
             <ul>
               {[
-                ['Beranda', '/dashboard-customer'],
+                ['Beranda', '/dashboard'],
+                ['Pesanan', '/order'],
                 ['Kalibrasi', '/kalibrasi'],
                 ['Pembayaran', '/pembayaran']
               ].map(([title, url]) => (
