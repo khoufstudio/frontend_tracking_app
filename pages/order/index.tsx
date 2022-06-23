@@ -1,4 +1,5 @@
-import { CalculatorIcon, CurrencyDollarIcon, CheckCircleIcon } from "@heroicons/react/solid";
+import { PlusIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 import { ReactElement } from 'react';
 import AdminLayout from "../../components/layouts/admin";
 
@@ -6,16 +7,23 @@ import AdminLayout from "../../components/layouts/admin";
 const Order = () => {
   return (
     <>
-      <h2 className='mb-2 text-2xl text-slate-700'>Pesanan</h2>
+      <div className="flex justify-between mb-4">
+        <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Pesanan</h2>
+        <Link href="order/add">
+          <button className="bg-blue-600 text-white px-6 rounded flex gap-2 items-center">
+            <PlusIcon className="w-6 text-slate-200"/> <div>Tambah</div>
+          </button>
+        </Link>
+      </div>
       <div className="bg-white">
         <table className="table-fixed w-full">
           <thead className="bg-slate-200">
-            <tr>
-              <td className="p-3 pl-5 text-slate-600">No</td>
-              <td className="p-3 pl-5 text-slate-600">No Order</td>
-              <td className="p-3 pl-5 text-slate-600">Tanggal Masuk</td>
-              <td className="p-3 pl-5 text-slate-600">SPM</td>
-              <td className="p-3 pl-5 text-slate-600"></td>
+            <tr className="border-b-gray-300 border-b-2">
+              <td className="text-slate-500 font-semibold w-16 text-center">No</td>
+              <td className="p-3 pl-5 text-slate-500 font-semibold">No Order</td>
+              <td className="p-3 pl-5 text-slate-500 font-semibold">Tanggal Masuk</td>
+              <td className="p-3 pl-5 text-slate-500 font-semibold">SPM</td>
+              <td className="p-3 pl-5 text-slate-500 font-semibold"></td>
             </tr>
           </thead>
           <tbody>
