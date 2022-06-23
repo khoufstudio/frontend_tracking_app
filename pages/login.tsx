@@ -1,6 +1,5 @@
 import { ExclamationIcon } from '@heroicons/react/solid'
 import type { NextPage } from 'next'
-import { NextResponse } from 'next/server'
 import { useState } from 'react'
 
 const Login: NextPage = () => {
