@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { CheckIcon, ExclamationIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
+import { CheckIcon, ExclamationIcon } from "@heroicons/react/solid"
 import { NextPage } from "next"
 import { Fragment, useState } from "react"
 

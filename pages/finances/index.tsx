@@ -1,8 +1,18 @@
-import { PlusIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { ReactElement } from 'react';
 import AdminLayout from "../../components/layouts/admin";
 
+interface Finance {
+  id: number,
+  noOrder: string,
+  dateOrder: Date,
+  paidOff: boolean
+}
+
+const dataFinances: Array<Finance> = [
+  {id: 1, noOrder: '202206010017XA99', dateOrder: new Date('2022-01-01'), paidOff: false },
+  {id: 2, noOrder: '202206010017XA8D', dateOrder: new Date('2022-01-01'), paidOff: true }
+]
 
 const Finances = () => {
   return (
@@ -22,13 +32,15 @@ const Finances = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="p-3 pl-5 text-slate-600">1</td>
-              <td className="p-3 pl-5 text-slate-600">34343434535434534</td>
-              <td className="p-3 pl-5 text-slate-600">23-04-2023</td>
-              <td className="p-3 pl-5 text-slate-600">Lunas</td>
-              <td className="p-3 pl-5 text-slate-600">-</td>
-            </tr>
+            {dataFinances.map((finance, index) => (
+              <tr key={index}>
+                <td className="p-3 pl-5 text-slate-600">{index + 1}</td>
+                <td className="p-3 pl-5 text-slate-600">{finance.noOrder}</td>
+                <td className="p-3 pl-5 text-slate-600">{finance.dateOrder.toLocaleDateString()}</td>
+                <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lunas' : 'Belum Lunas'}</td>
+                <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lihat' : 'Upload'}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
