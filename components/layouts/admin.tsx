@@ -39,7 +39,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
               <Menu>
                 <div className='relative text-sm'>
                   <Menu.Button className='items-center flex text-sm justify-end text-slate-500 w-56 hover:cursor-pointer'>
-                    <span>Pelanggan</span>
+                    <span>Operator</span>
                     <ChevronDownIcon className='h-5 w-5 text-slate-500 pt-1'/> 
                   </Menu.Button>
                   
