@@ -9,7 +9,7 @@ const Order = () => {
     <>
       <div className="flex justify-between mb-4">
         <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Pesanan</h2>
-        <Link href="order/add">
+        <Link href="orders/add">
           <button className="bg-blue-600 text-white px-6 rounded flex gap-2 items-center">
             <PlusIcon className="w-6 text-slate-200"/> <div>Tambah</div>
           </button>
