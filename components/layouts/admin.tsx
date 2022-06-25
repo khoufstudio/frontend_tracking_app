@@ -24,6 +24,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
               {[
                 ['Beranda', '/dashboard'],
                 ['Pesanan', '/orders'],
+                ['Keuangan', '/finances'],
               ].map(([title, url]) => (
                 <Link href={url}>
                   <li key={title} className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>{title}</li>
