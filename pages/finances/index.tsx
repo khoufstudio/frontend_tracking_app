@@ -14,6 +14,14 @@ const dataFinances: Array<Finance> = [
   {id: 2, noOrder: '202206010017XA8D', dateOrder: new Date('2022-01-01'), paidOff: true }
 ]
 
+const buttonAction = (paidOff: boolean) => {
+  if (paidOff) {
+    return <button className="bg-blue-500 text-white p-2 px-4 rounded text-xs font-bold">Download</button>
+  }
+
+  return <button className="bg-red-500 text-white p-2 px-4 rounded text-xs font-bold">Upload</button>
+}
+
 const Finances = () => {
   return (
     <>
@@ -38,7 +46,7 @@ const Finances = () => {
                 <td className="p-3 pl-5 text-slate-600">{finance.noOrder}</td>
                 <td className="p-3 pl-5 text-slate-600">{finance.dateOrder.toLocaleDateString()}</td>
                 <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lunas' : 'Belum Lunas'}</td>
-                <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lihat' : 'Upload'}</td>
+                <td className="p-3 pl-5 text-slate-600">{buttonAction(finance.paidOff)}</td>
               </tr>
             ))}
           </tbody>
