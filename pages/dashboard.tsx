@@ -7,7 +7,7 @@ const DashboardCustomer = () => {
   return (
     <>
       <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Beranda</h2>
-      <div className="grid grid-flow-col gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {/* card permintaan kalibrasi */}
         <div className='h-36 bg-white shadow-sm rounded-lg p-7 flex justify-between hover:cursor-pointer'>
           <CalculatorIcon className='h-20 text-blue-500 pt-1'/> 
