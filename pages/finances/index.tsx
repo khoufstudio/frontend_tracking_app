@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ReactElement } from 'react';
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, ReactElement, useState } from 'react';
 import AdminLayout from "../../components/layouts/admin";
 
 interface Finance {
@@ -14,15 +14,24 @@ const dataFinances: Array<Finance> = [
   {id: 2, noOrder: '202206010017XA8D', dateOrder: new Date('2022-01-01'), paidOff: true }
 ]
 
+const handleClickUpload = () => {
+  alert('coy')
+}
+
+const closeModal = () => {
+  alert('close modal')
+}
+
 const buttonAction = (paidOff: boolean) => {
   if (paidOff) {
     return <button className="bg-blue-500 text-white p-2 px-4 rounded text-xs font-bold">Download</button>
   }
 
-  return <button className="bg-red-500 text-white p-2 px-4 rounded text-xs font-bold">Upload</button>
+  return <button className="bg-red-500 text-white p-2 px-4 rounded text-xs font-bold" onClick={handleClickUpload}>Upload</button>
 }
 
 const Finances = () => {
+  const [isOpenUploadModal, setIsOpenUploadModal] = useState(false)
   return (
     <>
       <div className="flex justify-between mb-4">
@@ -52,6 +61,18 @@ const Finances = () => {
           </tbody>
         </table>
       </div>
+
+      {/* modal upload */}
+      <Transition appear show={isOpenUploadModal} as={Fragment}>
+        <Dialog as='div' className="relative z-10" onClose={closeModal}>
+          <Dialog.Panel>
+            <Dialog.Title>test</Dialog.Title>
+            <Dialog.Description>test</Dialog.Description>
+          </Dialog.Panel>
+
+        </Dialog>
+      </Transition>
+      {/* end of modal upload */}
     </>
   )
 }
