@@ -14,24 +14,26 @@ const dataFinances: Array<Finance> = [
   {id: 2, noOrder: '202206010017XA8D', dateOrder: new Date('2022-01-01'), paidOff: true }
 ]
 
-const handleClickUpload = () => {
-  alert('coy')
-}
-
-const closeModal = () => {
-  alert('close modal')
-}
-
-const buttonAction = (paidOff: boolean) => {
-  if (paidOff) {
-    return <button className="bg-blue-500 text-white p-2 px-4 rounded text-xs font-bold">Download</button>
-  }
-
-  return <button className="bg-red-500 text-white p-2 px-4 rounded text-xs font-bold" onClick={handleClickUpload}>Upload</button>
-}
 
 const Finances = () => {
   const [isOpenUploadModal, setIsOpenUploadModal] = useState(false)
+
+  const handleClickUpload = () => {
+    setIsOpenUploadModal(true)
+  }
+
+  const closeModal = () => {
+    setIsOpenUploadModal(false)
+  }
+
+  const buttonAction = (paidOff: boolean) => {
+    if (paidOff) {
+      return <button className="bg-blue-500 text-white p-2 px-4 rounded text-xs font-bold">Unduh</button>
+    }
+
+    return <button className="bg-red-500 text-white p-2 px-4 rounded text-xs font-bold" onClick={handleClickUpload}>Unggah</button>
+  }
+  
   return (
     <>
       <div className="flex justify-between mb-4">
@@ -65,11 +67,16 @@ const Finances = () => {
       {/* modal upload */}
       <Transition appear show={isOpenUploadModal} as={Fragment}>
         <Dialog as='div' className="relative z-10" onClose={closeModal}>
-          <Dialog.Panel>
-            <Dialog.Title>test</Dialog.Title>
-            <Dialog.Description>test</Dialog.Description>
-          </Dialog.Panel>
-
+          <div className="fixed inset-0 overflow-y-auto bg-black/30">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Dialog.Panel className="w-screen md:w-[800px] transform overflow-hidden bg-white p-6 rounded">
+                <Dialog.Title className="mb-4 font-bold text-xl">Unggah Kuitansi</Dialog.Title>
+                <Dialog.Description>
+                  <input type="file" name="upload_kuitansi" id="upload_kuitansi" />
+                </Dialog.Description>
+              </Dialog.Panel>
+            </div>
+          </div>
         </Dialog>
       </Transition>
       {/* end of modal upload */}
