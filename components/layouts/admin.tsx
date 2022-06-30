@@ -12,7 +12,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
     <>
       <div className='bg-blue-50'>
         {/* sidebar */}
-        <div className='bg-slate-900 w-56 text-white h-screen fixed z-10'>
+        <div className='bg-slate-900 md:w-56 text-white h-screen md:fixed md:z-10 hidden md:block'>
           <div className='pl-5 pr-10 py-3'>
             <Image src='/images/global_quality_logo.jpg' height={40} width={40} alt='Logo' />
           </div> 
@@ -82,7 +82,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
           </ul>
         </nav>
         {/* end of header */}
-        <main  className='px-5 pt-20 ml-[230px] min-h-screen'>{children}</main>
+        <main  className='px-5 pt-20 md:ml-[230px] ml-0  min-h-screen'>{children}</main>
       </div>
     </>
   )
