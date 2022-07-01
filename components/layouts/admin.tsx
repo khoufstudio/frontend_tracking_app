@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, MenuIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -37,8 +37,11 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
 
         {/* header */}
         <nav className='bg-white border-b-slate-300 p-3 fixed w-screen shadow-md shadow-slate-100'>
-          <ul className='flex justify-end'>
-            <li>
+          <ul className='ml-0 md:ml-[230px]'>
+            <li className='flex w-100 justify-between'>
+              <div>
+                <MenuIcon className='text-slate-400 w-6 md:hidden block' />
+              </div>
               <Menu>
                 <div className='relative text-sm'>
                   <Menu.Button className='items-center flex text-sm justify-end text-slate-500 w-56 hover:cursor-pointer'>
