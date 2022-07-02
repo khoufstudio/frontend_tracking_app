@@ -1,20 +1,25 @@
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, MenuIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 type DashboardLayoutProps = {
   children: React.ReactNode
 }
 
 const AdminLayout = ({ children } : DashboardLayoutProps ) => {
+  const [menuMobileOpen, setMenuMobileOpen] = useState(false)
+
   return (
     <>
       <div className='bg-blue-50'>
         {/* sidebar */}
-        <div className='bg-slate-900 md:w-56 text-white h-screen md:fixed md:z-10 hidden md:block'>
-          <div className='pl-5 pr-10 py-3'>
+        <div className={'bg-slate-900 md:w-56 text-white h-screen md:fixed md:z-10 md:block ' + `${menuMobileOpen ? 'w-3/4' : 'hidden'}`}>
+          <div className='flex justify-between pl-5 pr-10 py-3'>
             <Image src='/images/global_quality_logo.jpg' height={40} width={40} alt='Logo' />
+
+            <XIcon className='w-6 block md:hidden' onClick={() => setMenuMobileOpen(false)} />
           </div> 
           <h3 className='pl-5 text-slate-500 text-sm'>
             Halaman
@@ -40,7 +45,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
           <ul className='ml-0 md:ml-[230px]'>
             <li className='flex w-100 justify-between'>
               <div>
-                <MenuIcon className='text-slate-400 w-6 md:hidden block' />
+                <MenuIcon onClick={() => setMenuMobileOpen(true)} className='text-slate-400 w-6 md:hidden block' />
               </div>
               <Menu>
                 <div className='relative text-sm'>
