@@ -66,7 +66,7 @@ const AddOrder = () => {
           </div>
           <div>
             <label className="block" htmlFor="spm">Sistem Penilaian Maksimal (SPM)</label>
-            <div className='flex gap-4'>
+            <div className='grid grid-cols-3 gap-4'>
               <label htmlFor="5hari">
                 <input type="radio" name="spm" id="5hari" /> 5 Hari
               </label>
@@ -79,8 +79,8 @@ const AddOrder = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2 py-4">
-          <Link href="/orders"><button className="bg-gray-400 p-2 px-4 text-white rounded">Batal</button></Link>
+        <div className='flex pb-4'>
+          <Link href="/orders"><button className="bg-gray-400 p-2 px-4 text-white rounded mr-3">Batal</button></Link>
           <button className="bg-blue-600 p-2 px-4 text-white rounded" type="submit">Simpan</button>
         </div>
       </form>
