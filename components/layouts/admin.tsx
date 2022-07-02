@@ -32,7 +32,7 @@ const AdminLayout = ({ children } : DashboardLayoutProps ) => {
                 ['Keuangan', '/finances'],
               ].map(([title, url]) => (
                 <Link href={url} key={title}>
-                  <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600'>{title}</li>
+                  <li className='pl-5 pr-10 py-3 hover:cursor-pointer hover:bg-slate-600' onClick={() => setMenuMobileOpen(false)}>{title}</li>
                 </Link>
               ))}
             </ul>
