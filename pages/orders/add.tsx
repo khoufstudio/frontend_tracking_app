@@ -7,7 +7,7 @@ const AddOrder = () => {
     <>
       <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Tambah Pesanan</h2>
       <form action="">
-        <div className="my-4 grid grid-cols-2 gap-4">
+        <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block" htmlFor="no_order">No Order</label>
             <input className="border-2 p-2 text-sm w-full" id="no_order" type="text" value="202203020AAXXD" disabled />
