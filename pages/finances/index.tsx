@@ -40,28 +40,30 @@ const Finances = () => {
         <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Keuangan</h2>
       </div>
       <div className="bg-white">
-        <table className="table-fixed w-full">
-          <thead className="bg-slate-200">
-            <tr className="border-b-gray-300 border-b-2">
-              <td className="text-slate-500 font-semibold w-16 text-center">No</td>
-              <td className="p-3 pl-5 text-slate-500 font-semibold">No Order</td>
-              <td className="p-3 pl-5 text-slate-500 font-semibold">Tanggal Masuk</td>
-              <td className="p-3 pl-5 text-slate-500 font-semibold">Keterangan</td>
-              <td className="p-3 pl-5 text-slate-500 font-semibold">Bukti Pembayaran</td>
-            </tr>
-          </thead>
-          <tbody>
-            {dataFinances.map((finance, index) => (
-              <tr key={index}>
-                <td className="p-3 pl-5 text-slate-600">{index + 1}</td>
-                <td className="p-3 pl-5 text-slate-600">{finance.noOrder}</td>
-                <td className="p-3 pl-5 text-slate-600">{finance.dateOrder.toLocaleDateString()}</td>
-                <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lunas' : 'Belum Lunas'}</td>
-                <td className="p-3 pl-5 text-slate-600">{buttonAction(finance.paidOff)}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-slate-200">
+              <tr className="border-b-gray-300 border-b-2">
+                <td className="text-slate-500 font-semibold w-16 text-center">No</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">No Order</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">Tanggal Masuk</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">Keterangan</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">Bukti Pembayaran</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {dataFinances.map((finance, index) => (
+                <tr key={index}>
+                  <td className="p-3 pl-5 text-slate-600">{index + 1}</td>
+                  <td className="p-3 pl-5 text-slate-600">{finance.noOrder}</td>
+                  <td className="p-3 pl-5 text-slate-600">{finance.dateOrder.toLocaleDateString()}</td>
+                  <td className="p-3 pl-5 text-slate-600">{finance.paidOff ? 'Lunas' : 'Belum Lunas'}</td>
+                  <td className="p-3 pl-5 text-slate-600">{buttonAction(finance.paidOff)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* modal upload */}
