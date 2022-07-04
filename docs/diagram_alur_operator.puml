@@ -6,6 +6,7 @@ if "OK" then
   --> "Proses Kalibrasi di Teknisi"
   --> "Admin Ketik Hasil Kalibrasi"
   --> "Approval Finance"
+  --> "Sertifkat tersedia"
   -->(*)
 else 
   --> [Revisi] "Buat Pesanan"

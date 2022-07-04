@@ -1,0 +1,15 @@
+@startuml
+(*) --> "Customer mengetik No Resi"
+if "Ada data" then
+  --> [Ya] "Tampilkan Progress Kalibrasi"
+  if "Progress telah selesai" then
+    --> [Ya] "Munculkan tombol download PDF"
+    -->(*)
+  else 
+    --> [Tidak] (*)
+  endif
+else 
+  --> [Tidak ada] "No Resi tidak ditemukan"
+endif
+-->(*)
+@enduml
