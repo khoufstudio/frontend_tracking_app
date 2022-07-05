@@ -21,7 +21,7 @@ const Calibration = () => {
             <thead className="bg-slate-200">
               <tr className="border-b-gray-300 border-b-2">
                 <td className="text-slate-500 font-semibold w-16 text-center">No</td>
-                <td className="p-3 pl-5 text-slate-500 font-semibold">No Calibration</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">No Order</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold">Tanggal Masuk</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold">SPM</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold"></td>
