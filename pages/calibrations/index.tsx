@@ -9,7 +9,7 @@ const Calibration = () => {
     <>
       <div className="flex justify-between mb-4">
         <h2 className='mb-2 text-2xl text-slate-600 font-bold'>Kalibrasi</h2>
-        <Link href="orders/add">
+        <Link href="calibrations/add">
           <button className="bg-blue-600 text-white px-6 rounded flex gap-2 items-center">
             <PlusIcon className="w-6 text-slate-200"/> <div>Tambah</div>
           </button>
@@ -21,7 +21,7 @@ const Calibration = () => {
             <thead className="bg-slate-200">
               <tr className="border-b-gray-300 border-b-2">
                 <td className="text-slate-500 font-semibold w-16 text-center">No</td>
-                <td className="p-3 pl-5 text-slate-500 font-semibold">No Order</td>
+                <td className="p-3 pl-5 text-slate-500 font-semibold">No Calibration</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold">Tanggal Masuk</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold">SPM</td>
                 <td className="p-3 pl-5 text-slate-500 font-semibold"></td>
